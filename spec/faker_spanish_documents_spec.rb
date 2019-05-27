@@ -77,6 +77,16 @@ RSpec.describe Faker::SpanishDocuments do
       end
     end
 
+    context 'when letter is provided' do
+      let(:first_letter) { 'A' }
+
+      subject { Faker::SpanishDocuments.cif(first_letter) }
+
+      it 'includes first_letter' do
+        expect(subject).to start_with(first_letter)
+      end
+    end
+
     it 'generates a CIF with the correct size' do
       expect(subject.size).to eq(9)
     end
@@ -103,6 +113,16 @@ RSpec.describe Faker::SpanishDocuments do
 
     it 'generates a NIE with the correct size' do
       expect(subject.size).to eq(9)
+    end
+
+    context 'when letter is provided' do
+      let(:first_letter) { 'Z' }
+
+      subject { Faker::SpanishDocuments.nie(first_letter) }
+
+      it 'includes first_letter' do
+        expect(subject).to start_with(first_letter)
+      end
     end
   end
 
