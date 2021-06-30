@@ -6,8 +6,8 @@ RSpec.describe Faker::SpanishDocuments do
       before do
         srand(993)
 
-        expect(Faker::Number).to receive(:number).with(2).and_return('00')
-        expect(Faker::Number).to receive(:number).with(5).and_return('20909')
+        expect(Faker::Number).to receive(:number).with(digits: 2).and_return('00')
+        expect(Faker::Number).to receive(:number).with(digits: 5).and_return('20909')
       end
 
       it 'control code is letter' do
@@ -31,8 +31,8 @@ RSpec.describe Faker::SpanishDocuments do
       before do
         srand(993)
 
-        expect(Faker::Number).to receive(:number).with(2).and_return('40')
-        expect(Faker::Number).to receive(:number).with(5).and_return('23909')
+        expect(Faker::Number).to receive(:number).with(digits: 2).and_return('40')
+        expect(Faker::Number).to receive(:number).with(digits: 5).and_return('23909')
       end
 
       it 'control code is letter' do
@@ -56,8 +56,8 @@ RSpec.describe Faker::SpanishDocuments do
       before do
         srand(9993)
 
-        expect(Faker::Number).to receive(:number).with(2).and_return('42')
-        expect(Faker::Number).to receive(:number).with(5).and_return('23909')
+        expect(Faker::Number).to receive(:number).with(digits: 2).and_return('42')
+        expect(Faker::Number).to receive(:number).with(digits: 5).and_return('23909')
       end
 
       it 'control code is number' do

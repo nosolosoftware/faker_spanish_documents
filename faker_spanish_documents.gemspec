@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
     f.match(%r{^(test|spec|features)/})
   end
 
-  s.add_dependency 'faker', '~> 1.9'
+  s.add_dependency 'faker', '~> 2.18'
 end
