@@ -11,14 +11,14 @@ module Faker
 
     class << self
       def dni
-        number = Faker::Number.number(8).to_i
+        number = Faker::Number.number(digits: 8).to_i
         "#{number}#{nif_letter(number)}"
       end
 
       def nie(letter=nil)
         first_letter = letter && NIE_LETTERS.include?(letter) ? letter : NIE_LETTERS.sample
         first_number = NIE_LETTERS.find_index { |e| e == first_letter }
-        number_part = Faker::Number.number(7)
+        number_part = Faker::Number.number(digits: 7)
         number_for_calculation = "#{first_number}#{number_part}".to_i
 
         "#{first_letter}#{number_part}#{nif_letter(number_for_calculation)}"
@@ -26,8 +26,8 @@ module Faker
 
       def cif(letter=nil)
         first_letter = letter && CIF_LETTERS.include?(letter) ? letter : CIF_LETTERS.sample
-        province_code = Faker::Number.number(2)
-        random_number = Faker::Number.number(5)
+        province_code = Faker::Number.number(digits: 2)
+        random_number = Faker::Number.number(digits: 5)
         number = "#{province_code}#{random_number}"
 
         control_code = cif_control_code(number, first_letter)
